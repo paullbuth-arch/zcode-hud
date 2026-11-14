@@ -1,0 +1,140 @@
+/* ZCode interface theme — WezTerm-aligned wallpaper + glass surfaces.
+   Deployment target: ~/.zcode-ui/hud/theme.css (injected via webContents.insertCSS).
+   Fonts and wallpaper use absolute file:// URLs because the CSS is injected
+   into the page, not loaded as a document stylesheet. */
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("file://__HOME__/.zcode-ui/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("file://__HOME__/.zcode-ui/fonts/JetBrainsMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("file://__HOME__/.zcode-ui/fonts/JetBrainsMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("file://__HOME__/.zcode-ui/fonts/JetBrainsMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+.dark,
+.theme-zai-dark {
+  --font-sans: "JetBrains Mono", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif !important;
+  --font-mono: "JetBrains Mono", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", Consolas, monospace !important;
+
+  /* WezTerm foreground #c6c6c6; title-bar foundations #1e1e2e / #181825. */
+  --color-background: rgb(24 24 37 / 0%) !important;
+  --color-background-alt: var(--color-surface) !important;
+  --color-background-win-alt: #181825 !important;
+  --color-surface: rgb(198 198 198 / 7%) !important;
+  --color-surface-hover: rgb(198 198 198 / 12%) !important;
+  --color-header: var(--color-surface) !important;
+  --color-panel: var(--color-surface) !important;
+  --color-sidebar: var(--color-surface) !important;
+  --color-card: var(--color-surface) !important;
+  --color-popover: var(--color-surface) !important;
+  --color-popover-header: var(--color-surface) !important;
+  --color-input: var(--color-surface) !important;
+  --color-menu: var(--color-surface) !important;
+  --color-tab: var(--color-surface) !important;
+  --color-tab-active: var(--color-surface) !important;
+
+  --color-foreground: #c6c6c6 !important;
+  --color-foreground-subtle: rgb(198 198 198 / 70%) !important;
+  --color-foreground-subtlest: rgb(198 198 198 / 46%) !important;
+  --color-foreground-inverse: #181825 !important;
+  --color-border: rgb(198 198 198 / 16%) !important;
+  --color-border-hover: rgb(198 198 198 / 31%) !important;
+  --color-hover: rgb(198 198 198 / 10%) !important;
+  --color-selected: rgb(198 198 198 / 16%) !important;
+
+  --color-terminal-bg: #181825 !important;
+  --color-terminal-fg: #c6c6c6 !important;
+  --color-terminal-cursor: #c6c6c6 !important;
+  --color-terminal-cursor-accent: #181825 !important;
+  --color-terminal-selection: rgb(198 198 198 / 25%) !important;
+}
+
+/* Single background source: the viewport.  Painting it here (instead of on
+   .bg-background-win-alt) also covers the ~16px strip at the top of the window
+   that the app leaves unpainted in fullscreen — without this the transparent
+   window falls back to Chromium's white. */
+html {
+  background-color: #181825 !important;
+  background-image:
+    linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+    url("file://__HOME__/.zcode/v2/wall.png") !important;
+  background-position: center center, center center !important;
+  background-size: cover, cover !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed !important;
+}
+
+body,
+#root {
+  background: transparent !important;
+}
+
+body {
+  color: var(--color-foreground) !important;
+}
+
+/* The shell no longer paints the wallpaper itself. */
+.bg-background-win-alt {
+  background: transparent !important;
+}
+
+/* Chat Markdown code blocks (see original theme notes). */
+.my-4.border.border-border.bg-card [data-language] > diffs-container {
+  background-color: transparent !important;
+  --diffs-bg: transparent !important;
+  --diffs-light-bg: transparent !important;
+  --diffs-dark-bg: transparent !important;
+  --diffs-bg-buffer-override: transparent !important;
+  --diffs-bg-context-override: transparent !important;
+  --diffs-bg-context-gutter-override: transparent !important;
+  --diffs-bg-separator-override: transparent !important;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  font-family: var(--font-sans) !important;
+}
+
+pre,
+code,
+kbd,
+samp,
+textarea,
+.xterm,
+.monaco-editor,
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+/* The usage statusbar (vendored zusage overlay) ships its own styles and
+   follows the client theme via the --color-* variables set above. */

@@ -1,0 +1,22 @@
+{
+  "name": "zcode-hud",
+  "version": "0.2.0",
+  "description": "WezTerm-aligned wallpaper theme plus the animated zusage status bar (vendored upstream v1.5.19): live tok/s capsule, per-answer rate line, context ring. One atomic app.asar injection; trigger-driven local query process; no hooks, no auto-update, no MCP.",
+  "description_i18n": {
+    "en": "WezTerm-aligned wallpaper theme plus the animated zusage status bar (vendored upstream v1.5.19): live tok/s capsule, per-answer rate line, context ring. One atomic app.asar injection; trigger-driven local query process; no hooks, no auto-update, no MCP.",
+    "zh-CN": "WezTerm 对齐壁纸主题加原版动画状态条（vendored v1.5.19）：实时 tok/s 胶囊、逐问速率行、上下文环。单次 asar 注入；触发式本地查询进程；无钩子、无自动更新、无 MCP。"
+  },
+  "author": {
+    "name": "turing"
+  },
+  "license": "MIT",
+  "keywords": [
+    "theme",
+    "hud",
+    "statusbar",
+    "usage",
+    "tokens",
+    "wallpaper"
+  ],
+  "commands": "commands"
+}

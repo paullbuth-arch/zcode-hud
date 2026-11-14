@@ -1,0 +1,24 @@
+{
+  "name": "dev-personal-plugins",
+  "owner": {
+    "name": "turing"
+  },
+  "plugins": [
+    {
+      "name": "zcode-hud",
+      "source": "./zcode-hud",
+      "version": "0.2.0",
+      "description": "Wallpaper theme plus the animated zusage status bar (vendored upstream v1.5.19). One atomic app.asar injection; trigger-driven local query process; no hooks, no auto-update, no MCP.",
+      "displayName": "ZCode 主题与动画状态条",
+      "displayName_i18n": {
+        "en": "ZCode Theme & Animated Statusbar",
+        "zh-CN": "ZCode 主题与动画状态条"
+      },
+      "description_i18n": {
+        "en": "Wallpaper-aligned theme (glass surfaces, JetBrains Mono) plus the animated glass-capsule status bar: live tok/s, per-answer rate line, context ring, hover detail panels. Single app.asar injection; no hooks, no auto-update, no MCP.",
+        "zh-CN": "壁纸主题（轻透玻璃表面、JetBrains Mono）加原版动画玻璃胶囊状态条：实时 tok/s、逐问速率行、上下文环、悬停明细面板。单次 asar 注入；无钩子、无自动更新、无 MCP。"
+      },
+      "category": "utilities"
+    }
+  ]
+}
