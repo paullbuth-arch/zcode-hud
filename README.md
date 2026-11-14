@@ -24,3 +24,4 @@ ZCode → 设置 → 插件 → 添加插件市场：
 ## 许可
 
 MIT（含 vendored 上游代码，见 `LICENSE` 与 `zcode-hud/vendor/zusage/LICENSE`）。
+JetBrains Mono 字体遵循 SIL OFL 1.1（见 `zcode-hud/theme/fonts/OFL.txt`）。

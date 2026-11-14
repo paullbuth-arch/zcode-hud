@@ -61,3 +61,4 @@ python3 scripts/install.py unpatch
 ## 许可
 
 MIT。vendored 状态条代码 MIT，Copyright (c) 2026 xhwx（ByteRax/zcode-token-usage-statusbar）。
+JetBrains Mono 字体遵循 SIL OFL 1.1（`theme/fonts/OFL.txt`）。
