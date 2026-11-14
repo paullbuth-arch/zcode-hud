@@ -166,6 +166,8 @@ def deploy(home: Path) -> None:
     fonts.mkdir(parents=True, exist_ok=True)
 
     shutil.copy2(RUNTIME_SRC / "inject-main.cjs", hud / "inject-main.cjs")
+    # Retired in 0.2.0: the minimal chip was replaced by the vendored statusbar.
+    (hud / "hud-renderer.js").unlink(missing_ok=True)
 
     css = (THEME_SRC / "wez.css").read_text(encoding="utf-8")
     css = css.replace("__HOME__", str(home))
